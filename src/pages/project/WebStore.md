@@ -3,11 +3,12 @@ layout: ../../layouts/project.astro
 title: WebStore
 client: Self
 publishDate: 2022-03-17 00:00:00
-img: https://res.cloudinary.com/mmarino/image/upload/v1647571680/webstore_screenshot_lx9vbf.png
+img: https://res.cloudinary.com/mmarino/image/upload/e_art:sonnet,f_auto,q_auto/v1647571680/webstore_screenshot_lx9vbf.png
 description: |
   a full-stack ecommerce application powering the business of a fictional bookstore
 tags:
   - ecommerce
+  - full stack
   - angular
   - typescript
   - .net
@@ -15,22 +16,27 @@ tags:
   - c#
   - duende
   - identityserver
-  - .net
   - entity framework
   - sql server
+  - docker
+  - containers
   - git
+  - github
   - netlify
   - railway
   - azure
   - google domains
   - cloudflare
   - cloudinary
+  - let's encrypt
   - sendgrid
 ---
 
 # WebStore
 
 WebStore is a full-stack ecommerce application powering the business of a fictional bookstore. Its main purposes are to demonstrate my ability as a software engineer and to familiarize myself with the technologies that my employer uses.
+
+[View the source on GitHub](https://github.com/memarino92/WebStore)
 
 ## Main Technologies
 

@@ -7,8 +7,14 @@ import Footer from '../components/Footer/index.jsx';
 import PortfolioPreview from '../components/PortfolioPreview/index.jsx';
 
 // Data Fetching: List all Markdown posts in the repo.
+
+//Projects
 const projects = Astro.fetchContent("./project/**/*.md");
 const featuredProject = projects[0];
+
+//Blog Posts
+const posts = Astro.fetchContent("./blog/**/*.md");
+const featuredPost = projects[0];
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
@@ -189,7 +195,8 @@ const featuredProject = projects[0];
         width="1600"
         height="1131"
         class="img"
-        src="https://res.cloudinary.com/mmarino/image/upload/w_1200/LookingDown_o9yxq8.jpg"
+        alt="Bearded, sweaty men on stage at a metal show"
+        src="https://res.cloudinary.com/mmarino/image/upload/w_1200,q_auto,f_auto/LookingDown_o9yxq8.jpg"
       >
       <div class="gradient"></div>
       <div class="gradient2"></div>
