@@ -70,9 +70,9 @@ cd Webstore
 
 Create a `.env` file in the root of each project:
 
-- `Webstore\IdentityServer\.env`
-- `Webstore\WebStoreAPI\.env`
-- `Webstore\WebStoreFrontend\.env`
+- `WebStore\IdentityServer\.env`
+- `WebStore\WebStoreAPI\.env`
+- `WebStore\WebStoreFrontend\.env`
 
 Copy and paste the environment variables emailed to you into their respective `.env` files.
 
@@ -120,3 +120,6 @@ Login credentials for existing users:
 | ----------------- | ---------- |
 | webstoreuser      | Pass@word1 |
 | webstoreadminuser | Pass@word1 |
+
+
+**Note:** When updating user passwords through the admin panel, new passwords must meet password complexity requirements (minimum 8 characters, include uppercase, lower case, numbers and special characters). If the password does not meet the requirements the update will silently fail with no indication in the UI.
