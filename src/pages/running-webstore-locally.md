@@ -34,8 +34,7 @@ tags:
 
 # Running WebStore
 
-[View the source on GitHub](https://github.com/memarino92/WebStore)  
-
+[View the source on GitHub](https://github.com/memarino92/WebStore)
 
 ## Database
 
@@ -46,6 +45,7 @@ For simplicity I've created a database in Azure for you to connect to when runni
 ### Prerequisites
 
 Make sure you have installed:
+
 - Node
 - Visual Studio
 - Visual Studio Code (Recommended for Angular development)
@@ -60,6 +60,7 @@ Updating models and making changes to the database schema is handled through EF 
 ### Clone the source code
 
 From your terminal run:
+
 ```
 git clone https://github.com/memarino92/WebStore.git
 cd Webstore
@@ -69,13 +70,13 @@ cd Webstore
 
 Create a `.env` file in the root of each project:
 
- - `Webstore\IdentityServer\.env`
- - `Webstore\WebStoreAPI\.env`
- - `Webstore\WebStoreFrontend\.env`
+- `Webstore\IdentityServer\.env`
+- `Webstore\WebStoreAPI\.env`
+- `Webstore\WebStoreFrontend\.env`
 
 Copy and paste the environment variables emailed to you into their respective `.env` files.
 
-For a detailed discussion on why one might choose a `.env` solution over `applicationSettings.json` or other methods of configuration, see [this blog post](https://dusted.codes/dotenv-in-dotnet) for .NET specifically or the [Config](https://12factor.net/config) page of the [12 Factor App](https://12factor.net/) guidelines for a broader overview. 
+For a detailed discussion on why one might choose a `.env` solution over `applicationSettings.json` or other methods of configuration, see [this blog post](https://dusted.codes/dotenv-in-dotnet) for .NET specifically or the [Config](https://12factor.net/config) page of the [12 Factor App](https://12factor.net/) guidelines for a broader overview.
 
 ### Set multiple startup projects in Visual Studio
 
@@ -91,13 +92,19 @@ OPTIONAL: Configure SwaggerUI to launch automatically on startup by changing the
 
 ### Frontend Setup
 
-Open the `Webstore\WebStoreFrontend` directory in Visual Studio Code. Open the terminal and run: 
+Open the `Webstore\WebStoreFrontend` directory in Visual Studio Code. Open the terminal and run:
 
 ```
 npm install
 ```
 
-This might take a couple of minutes. Once it is finished, start the project with:
+This might take a couple of minutes. If npm gives you an error, retry the command with the `--legacy-peer-deps` flag:
+
+```
+npm install --legacy-peer-deps
+```
+
+and the installation should complete without error (the error is being caused by outdated dependencies in the MDBootstrap library). Once it is finished, start the project with:
 
 ```
 npm start
@@ -106,9 +113,10 @@ npm start
 Once the server has started, you should be able to see the project running at [https://localhost:4200/](https://localhost:4200).
 
 ### Users
+
 Login credentials for existing users:
 
-| Username     | Password |
-| ----------- | ----------- |
-| webstoreuser      | Pass@word1       |
-| webstoreadminuser   | Pass@word1        |
+| Username          | Password   |
+| ----------------- | ---------- |
+| webstoreuser      | Pass@word1 |
+| webstoreadminuser | Pass@word1 |
