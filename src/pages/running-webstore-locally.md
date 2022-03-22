@@ -1,5 +1,5 @@
 ---
-layout: ../layouts/how-to-run-webstore.astro
+layout: ../layouts/running-webstore-locally.astro
 title: Running Webstore Locally
 client: Self
 publishDate: 2022-03-22 00:00:00
@@ -51,7 +51,7 @@ Make sure you have installed:
 - Visual Studio Code (Recommended for Angular development)
 - Git
 
-If you wish to make changes to the API endpoints you will need the NSwag CLI installed [(Download NSwag.zip here)](https://github.com/RicoSuter/NSwag/releases). 
+If you wish to make changes to the API endpoints you will need the NSwag CLI installed [(Download NSwag.zip here)](https://github.com/RicoSuter/NSwag/releases). Once installed you can re-generate the service proxy by running the command `nswag run /runtime:net60 ` in the root directory of the Angular project.
 
 Automatic code formatting for the Angular app is handled with [Prettier](https://prettier.io/). In my opinion, using Prettier would be the single biggest quality of life improvement for the development of Tempest. Never worry about properly indenting deeply nested HTML again. Seriously.
 
@@ -75,6 +75,8 @@ Create a `.env` file in the root of each project:
 
 Copy and paste the environment variables emailed to you into their respective `.env` files.
 
+For a detailed discussion on why one might choose a `.env` solution over `applicationSettings.json` or other methods of configuration, see [this blog post](https://dusted.codes/dotenv-in-dotnet) for .NET specifically or the [Config](https://12factor.net/config) page of the [12 Factor App](https://12factor.net/) guidelines for a broader overview. 
+
 ### Set multiple startup projects in Visual Studio
 
 Open the `WebStore.sln` file in Visual Studio. In the Solution Explorer, right click the solution and select "Set Startup Projects". In the dialog, select the "Multiple Startup Projects" option and make the following adjustments:
@@ -84,6 +86,8 @@ Open the `WebStore.sln` file in Visual Studio. In the Solution Explorer, right c
 - WebStoreFrontend - None
 
 The backend should now be setup and ready to run with debugging by hitting F5
+
+OPTIONAL: Configure SwaggerUI to launch automatically on startup by changing the `"launchBrowser"` property to `"true"` inside `WebStore\WebStoreAPI\Properties\launchSettings.json`.
 
 ### Frontend Setup
 
@@ -100,3 +104,11 @@ npm start
 ```
 
 Once the server has started, you should be able to see the project running at [https://localhost:4200/](https://localhost:4200).
+
+### Users
+Login credentials for existing users:
+
+| Username     | Password |
+| ----------- | ----------- |
+| webstoreuser      | Pass@word1       |
+| webstoreadminuser   | Pass@word1        |
