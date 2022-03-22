@@ -1,0 +1,102 @@
+---
+import MainHead from '../components/MainHead.astro';
+import Footer from '../components/Footer/index.jsx';
+import Nav from '../components/Nav/index.jsx';
+
+const { content } = Astro.props;
+---
+<html lang={ content.lang || 'en' }>
+  <head>
+    <MainHead title={content.title} description={content.description} />
+    <style lang="scss">
+      .hero {
+        padding: 4rem;
+        display: flex;
+        background-color: var(--t-fg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 25vw;
+        color: black;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .tag {
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+        text-transform: uppercase;
+
+        &:nth-of-type(1n) {
+          color: var(--c-green);
+        }
+        &:nth-of-type(2n) {
+          color: var(--c-orange);
+        }
+        &:nth-of-type(3n) {
+          color: var(--c-blue);
+        }
+        &:nth-of-type(4n) {
+          color: var(--c-pink);
+        }
+      }
+
+      .title {
+        font-size: var(--f-u10);
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 0.0625em;
+      }
+
+      .leadIn {
+        color: var(--t-bg);
+        background-color: var(--t-fg);
+      }
+
+      .tagline {
+        font-weight: 300;
+        font-size: var(--f-u3);
+        line-height: 1.5;
+      }
+
+      .content {
+        font-size: var(--f-u1);
+        line-height: 2.2;
+      }
+
+      kbd {
+        background-color: #eee;
+        border-radius: 3px;
+        border: 1px solid #b4b4b4;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, .2), 0 2px 0 0 rgba(255, 255, 255, .7) inset;
+        color: #333;
+        display: inline-block;
+        font-size: .85em;
+        font-weight: 700;
+        line-height: 1;
+        padding: 2px 4px;
+        white-space: nowrap;
+      }
+    </style>
+  </head>
+  <body>
+    <Nav />
+    <header style={`background-image:url(${content.img})`} class="hero">
+      <h1 class="title">{content.title}</h1>
+    </header>
+    <div class="leadIn">
+      <div class="wrapper pt8 pb8 mb8 tac">
+        {content.tags.map((t) => (
+          <span class="tag">{t}</span>
+        ))}
+        <h3 class="tagline">{content.description}</h3>
+      </div>
+    </div>
+    <div class="wrapper wrapper__readable">
+      <div class="content"><slot></slot></div>
+    </div>
+    <footer class="tac mt6">
+    </footer>
+    <Footer />
+  </body>
+</html>
