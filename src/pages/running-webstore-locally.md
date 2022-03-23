@@ -61,7 +61,7 @@ Updating models and making changes to the database schema is handled through EF 
 
 From your terminal run:
 
-```
+```bash
 git clone https://github.com/memarino92/WebStore.git
 cd Webstore
 ```
@@ -94,19 +94,21 @@ OPTIONAL: Configure SwaggerUI to launch automatically on startup by changing the
 
 Open the `Webstore\WebStoreFrontend` directory in Visual Studio Code. Open the terminal and run:
 
-```
+```bash
+
 npm install
 ```
 
 This might take a couple of minutes. If npm gives you an error, retry the command with the `--legacy-peer-deps` flag:
 
-```
+```bash
+
 npm install --legacy-peer-deps
 ```
 
 and the installation should complete without error (the error is being caused by outdated dependencies in the MDBootstrap library). Once it is finished, start the project with:
 
-```
+```bash
 npm start
 ```
 
