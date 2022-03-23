@@ -32,7 +32,7 @@ Imposter syndrome is rampant in software development and I think an import part 
 
 Anyway, I posted that python code on Reddit and got some feedback - drop the object-oriented crap and here's how you do it in 7 lines:
 
-```
+```py
 >>> from random import randint
 >>> guess = [ randint(0, 2) for _ in range(1000) ]
 >>> sum(g == 2 for g in guess)
