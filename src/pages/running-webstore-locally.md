@@ -95,14 +95,12 @@ OPTIONAL: Configure SwaggerUI to launch automatically on startup by changing the
 Open the `Webstore\WebStoreFrontend` directory in Visual Studio Code. Open the terminal and run:
 
 ```bash
-
 npm install
 ```
 
 This might take a couple of minutes. If npm gives you an error, retry the command with the `--legacy-peer-deps` flag:
 
 ```bash
-
 npm install --legacy-peer-deps
 ```
 
