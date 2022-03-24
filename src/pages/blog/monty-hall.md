@@ -3,10 +3,8 @@ layout: ../../layouts/blogPost.astro
 title: The Monty Hall Problem
 publishDate: 2022-03-23T02:15:55.509Z
 img: https://res.cloudinary.com/mmarino/image/upload/v1648001990/amy-monty-hall_hodqgl.png
-setup: |
-  import { Code } from 'astro/components';
 description: |
-  Simulating a classic probability puzzle using python
+  Simulating the classic probability puzzle using python
 tags:
   - python
   - simulation
@@ -16,6 +14,10 @@ tags:
   - learning
   - education
   - imposter syndrome
+  - self improvement
+  - computer science
+  - reddit
+  - programming
 ---
 
 # The Monty Hall Problem
