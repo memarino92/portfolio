@@ -80,12 +80,17 @@ For a detailed discussion on why one might choose a `.env` solution over `applic
 
 ### Set multiple startup projects in Visual Studio
 
-Open the `WebStore.sln` file in Visual Studio. In the Solution Explorer, right click the solution and select "Set Startup Projects". In the dialog, select the "Multiple Startup Projects" option and make the following adjustments:
+Open the `WebStore.sln` file in Visual Studio. In the Solution Explorer, right click the solution and select "Set Startup Projects". 
+
+![Solution Context Menu](https://res.cloudinary.com/mmarino/image/upload/v1648234609/SetStartupProjects_sueumm.png)
+
+In the dialog, select the "Multiple Startup Projects" option and make the following adjustments:
 
 - IdentityServer - Start
 - WebStoreAPI - Start
 - WebStoreFrontend - None
 
+![Startup Project Settings](https://res.cloudinary.com/mmarino/image/upload/v1648234609/StartupSettings_a8ya0n.png)
 The backend should now be setup and ready to run with debugging by hitting F5
 
 OPTIONAL: Configure SwaggerUI to launch automatically on startup by changing the `"launchBrowser"` property to `"true"` inside `WebStore\WebStoreAPI\Properties\launchSettings.json`.
