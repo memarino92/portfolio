@@ -26,7 +26,7 @@ Published {new Date(frontmatter.publishDate).toLocaleDateString()}
 
 ## Learn To Program BASIC
 
-In the distant past of 1998, a now basically-defunct but then relatively well-known game publisher called Interplay released an educational title called Learn To Program BASIC. Shortly thereafter, I picked up a copy at the Scholastic book fair and got my first taste of real programming. It was, in short, very 90s. I did learn quite a bit though, and the foundational programming concepts of BASIC that I learned stuck with me and definitely influenced my way of thinking as I grew older.
+In the distant past of 1998, a now basically-defunct but then relatively well-known game publisher called Interplay released an educational title called _Learn to Program BASIC_. Shortly thereafter, I picked up a copy at the Scholastic book fair and got my first taste of real programming. It was, in short, very 90s. I did learn quite a bit though, and the foundational programming concepts of BASIC that I learned stuck with me and definitely influenced my way of thinking as I grew older.
 
 In the accompanying booklet, there were some practice problems for the player to solve after they'd finished the main game. One of them described the Caesar's Box code, an ancient method of cryptography supposedly invented by the big man J. Caesar himself. First, you write the message you wish to encode in a square grid, so `HELLO INTERNET` would look like:
 | | | | |
@@ -53,7 +53,7 @@ const encoder = (message: string): string => {
 };
 ```
 
-Next, we'll need to figure out what size box, or grid, we need to make to contain our message. To small, and we won't be able to fit the whole thing. If the length of our message is a perfect square, then we can take the square root of that as our side length. If not, we can still take the square root and just round up to the next integer.
+Next, we'll need to figure out what size box, or grid, we need to make to contain our message. Too small, and we won't be able to fit the whole thing. If the length of our message is a perfect square, then we can take the square root of that as our side length. If not, we can still take the square root and just round up to the next integer.
 
 ```ts
 const encoder = (message: string): string => {
@@ -82,6 +82,7 @@ const encoder = (message: string): string => {
   let paddedMessage = message.slice().padEnd(gridSize ** 2);
   let messageGrid: Array<string[]> = [];
 
+  // Fill in our message grid
   for (let i = 0; i < gridSize; i++) {
     messageGrid[i] = [];
     while (messageGrid[i].length < gridSize) {
@@ -113,6 +114,7 @@ const encoder = (message: string): string => {
   let paddedMessage = message.slice().padEnd(gridSize ** 2);
   let messageGrid: Array<string[]> = [];
 
+  // Fill in our message grid
   for (let i = 0; i < gridSize; i++) {
     messageGrid[i] = [];
     while (messageGrid[i].length < gridSize) {
@@ -121,6 +123,7 @@ const encoder = (message: string): string => {
     }
   }
 
+  // Flatten our message grid into the encoded message
   let outputString = '';
   for (let columnIndex = 0; columnIndex < gridSize; columnIndex++) {
     for (let rowIndex = 0; rowIndex < gridSize; rowIndex++) {
@@ -132,7 +135,7 @@ const encoder = (message: string): string => {
 };
 ```
 
-That's it, our encoder function is done! Play around with it using the input below, powered by the same function we just wrote. Try copying the scrambled message and pasting it back in the input to see the symmetric nature of our encorder at work.
+That's it, our encoder function is done! Play around with it using the input below, powered by the same function we just wrote. Try copying the scrambled message and pasting it back in the input to see the symmetric nature of our encoder at work.
 
 ---
 
@@ -144,6 +147,6 @@ Now you may be thinking that there wasn't a whole lot of Typescript-y stuff goin
 
 Of course, there's many other ways we could have accomplished this encoder. You could do it without ever building an actual message grid, and with lower time and space complexity. Improving on this method or devising new ones is left as an excercise for the reader. If you come up with a new way to accomplish this, I'd love to see it! You can find me on twitter at [@mmarino92](https://twitter.com/mmarino92).
 
-To close us out, here's a compilation of the movies included at the start of each chapter of _Learn to Program BASIC_. You'll see what I mean about the 90s aspect, but it's still a fun look, and definitely had a lasting impression on me! Enjoy!
+To close us out, here's a compilation of the movies included at the start of each chapter of _Learn to Program BASIC_. You'll see what I mean about the 90s aspect of the game but it's a fun watch, and definitely had a lasting impression on me! Enjoy!
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/uBYz9syhNAA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
