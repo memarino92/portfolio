@@ -161,3 +161,10 @@ $colors: 'black', 'blue', 'white';
 .wrapper__readable {
   max-width: 50em;
 }
+
+tr,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 0.5em;
+}
