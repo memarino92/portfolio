@@ -15,8 +15,10 @@ const projects = Astro.fetchContent("./project/**/*.md");
 const featuredProject = projects[0];
 
 //Blog Posts
-const posts = Astro.fetchContent("./blog/**/*.md");
-const featuredPost = projects[0];
+const posts = await Astro.fetchContent("./blog/**/*.md");
+const sortedPosts = posts.sort((a, b) => {
+  return new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime();
+});
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
@@ -216,10 +218,13 @@ const featuredPost = projects[0];
     <main class="wrapper mt4 mb4">
       <div class="grid">
               <div class="section">
-          <h3 class="sectionTitle">Selected Work</h3>
-          <PortfolioPreview project={featuredProject} />
+          <h3 class="sectionTitle">Recent Blog Posts</h3>
+          <PortfolioPreview project={sortedPosts[0]} />
+          <br/>
+          <br/>
+          <PortfolioPreview project={sortedPosts[1]} />
           <div class="tac mt4">
-            <a href="/projects">
+            <a href="/blog">
               <Button>View All</Button>
             </a>
           </div>
@@ -230,10 +235,10 @@ const featuredPost = projects[0];
             <span>Hey!</span> I’m Michael, and this is my website. 
             I'm currently employed making full stack applications with Angular and .NET, and I contribute to open source projects such as <a href="https://redwoodjs.com" target="_blank" rel="nofollow">RedwoodJs</a>. 
             I built this site using <a href="https://github.com/withastro/astro" target="_blank" rel="nofollow">Astro</a>, an exciting new static website compiler.
-            I'd pick mountains over the beach, love going on hikes, riding my bike and I play guitar in a death metal band.
+            I'd pick mountains over the beach, I love going on hikes, riding my bike and I play guitar in a death metal band.
           </p>
           <p>
-            <a href="/about">Read more</a>
+            <a href="/about">More about me</a>
           </p>
         </div>
       </div>
