@@ -143,7 +143,7 @@ That's it, our encoder function is done! Play around with it using the input bel
 
 ---
 
-Now you may be thinking that there wasn't a whole lot of Typescript-y stuff going on in our encoder, and you'd be right! A large part of the benefit of using Typescript is in the tooling - being able to know for certain what methods and properties are avaiable on a given object at dev time is a huge boon to developer productivity, and it only takes a couple tweaks from standard Javascript to utilize. This is a great example of how you can start adopting Typescript slowly and incrementally in a project, just by changing the extention on a file and following the errors your editor or IDE presents you.
+Now you may be thinking that there wasn't a whole lot of Typescript-y stuff going on in our encoder, and you'd be right! A large part of the benefit of using Typescript is in the tooling - being able to know for certain what methods and properties are available on a given object at dev time is a huge boon to developer productivity, and it only takes a couple tweaks from standard Javascript to utilize. This is a great example of how you can start adopting Typescript slowly and incrementally in a project, just by changing the extention on a file and following the errors your editor or IDE presents you.
 
 Of course, there's many other ways we could have accomplished this encoder. You could do it without ever building an actual message grid, and with lower time and space complexity. Improving on this method or devising new ones is left as an excercise for the reader. If you come up with a new way to accomplish this, I'd love to see it! You can find me on twitter at [@mmarino92](https://twitter.com/mmarino92).
 
