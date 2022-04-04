@@ -2,7 +2,7 @@
 layout: ../../../layouts/blogPost.astro
 title: jsPDF and You
 publishDate: 2022-04-04T01:42:48.568Z
-img: https://res.cloudinary.com/mmarino/image/upload/e_tint/v1649036245/jspdf_hkb8ew.png
+img: https://res.cloudinary.com/mmarino/image/upload/v1649079667/pdf_bgwn4p.png
 description: |
   An introduction to creating PDFs with TypeScript
 tags:
