@@ -26,7 +26,7 @@ setup: |
 
 Published {new Date(frontmatter.publishDate).toLocaleDateString()}
 
-Making PDFs - nobody wants to talk about it! It’s unglamorous work, but at some point, many of us will have a need to generate PDFs programmatically in an app we’re responsible for maintaining. As with everything in JavaScript land, there are probably more solutions to this problem than there need to be. Today we’ll be taking a look at one of the most popular - a library called [jsPDF](<[https://www.npmjs.com/package/jspdf](https://www.npmjs.com/package/jspdf)>).
+Making PDFs - nobody wants to talk about it! It’s unglamorous work, but at some point, many of us will have a need to generate PDFs programmatically in an app we’re responsible for maintaining. As with everything in JavaScript land, there are probably more solutions to this problem than there need to be. Today we’ll be taking a look at one of the most popular - a library called [jsPDF](https://www.npmjs.com/package/jspdf).
 
 As a library, jsPDF has been around in some form or another for over a decade and is still being actively maintained. That is to say, this is not some ancient PDF library forgotten by time. If you’ve used it in the past, you might be pleasantly surprised at some of the upgrades that it’s received in the last couple of years.
 
@@ -134,7 +134,7 @@ export function generatePDF(data: item[]): void {
 }
 ```
 
-Here, we instantiate a new PDF document with `new jsPDF()`. We then add some text to it with a call to the `jsPDF.text()` method, which takes `string | string[]` as its first parameter, the starting x position relative to the left edge of the document as the second parameter, and the y position relative to the top of the document a the third. The default unit is in millimeters and the default document size is A4 in portrait orientation, but you can customize these when instantiating the document if you need to. Lastly, thanks to [this StackOverflow post](<[https://stackoverflow.com/questions/17739816/how-to-open-generated-pdf-using-jspdf-in-new-window](https://stackoverflow.com/questions/17739816/how-to-open-generated-pdf-using-jspdf-in-new-window)>) for demonstrating how to open the generated PDF in a new window instead of downloading it.
+Here, we instantiate a new PDF document with `new jsPDF()`. We then add some text to it with a call to the `jsPDF.text()` method, which takes `string | string[]` as its first parameter, the starting x position relative to the left edge of the document as the second parameter, and the y position relative to the top of the document a the third. The default unit is in millimeters and the default document size is A4 in portrait orientation, but you can customize these when instantiating the document if you need to. Lastly, thanks to [this StackOverflow post](https://stackoverflow.com/questions/17739816/how-to-open-generated-pdf-using-jspdf-in-new-window) for demonstrating how to open the generated PDF in a new window instead of downloading it.
 
 Now, update your `app.tsx` file to look like the following:
 
