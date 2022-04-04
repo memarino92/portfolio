@@ -40,15 +40,19 @@ We’ll go through some patterns to make this a little nicer to maintain, and ea
 
 From your terminal, run
 
-`npx create-react-app react-pdf-app --template typescript`
+```bash
+npx create-react-app react-pdf-app --template typescript
 
-`cd react-pdf-app && npm start`
+cd react-pdf-app && npm start
+```
 
 If everything has gone correctly, you should see the usual spinning react atom. Great!
 
 Next we’ll install the jsPDF library -
 
-`npm install jsPDF`
+```
+npm install jsPDF
+```
 
 and create two new files: `src/utils.ts` and `src/data.ts`
 
