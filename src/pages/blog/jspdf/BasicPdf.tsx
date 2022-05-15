@@ -1,4 +1,4 @@
-import { data, item } from './data';
+import { data, item } from './_data';
 import { jsPDF } from 'jspdf';
 
 function generatePDF(data: item[]): void {

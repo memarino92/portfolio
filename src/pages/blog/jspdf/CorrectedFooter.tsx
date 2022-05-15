@@ -1,5 +1,5 @@
 import { jsPDF } from 'jspdf';
-import { data, item } from './data';
+import { data, item } from './_data';
 
 export function generatePDF(data: item[]): void {
   const doc = new jsPDF();
