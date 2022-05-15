@@ -1,5 +1,5 @@
 import { useState } from 'preact/hooks';
-import { encoder } from './encoder';
+import { encoder } from './_encoder';
 
 function EncoderComponent() {
   const [string, setString] = useState('HELLO INTERNET');

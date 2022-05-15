@@ -1,5 +1,5 @@
 import { jsPDF } from 'jspdf';
-import { data, item } from './data';
+import { data, item } from './_data';
 
 type lineHeightFunction = (fontSize: number) => number;
 
