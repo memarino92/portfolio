@@ -7,13 +7,9 @@ import Footer from '../components/Footer/index.jsx';
 import Nav from '../components/Nav/index.jsx';
 import PortfolioPreview from '../components/PortfolioPreview/index.jsx';
 
-interface MarkdownFrontmatter {
-  publishDate: number;
-}
-
-const projects = Astro.fetchContent<MarkdownFrontmatter>('./project/**/*.md')
-  .filter(({ publishDate }) => !!publishDate)
-  .sort((a, b) => new Date(b.publishDate).valueOf() - new Date(a.publishDate).valueOf());
+const projects = (await Astro.glob('./project/**/*.md'))
+	.filter(({ frontmatter }) => !!frontmatter.publishDate)
+	.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf());
 ---
 
 <html lang="en">
@@ -31,10 +27,8 @@ const projects = Astro.fetchContent<MarkdownFrontmatter>('./project/**/*.md')
     <div class="wrapper">
       <h1 class="title mt4 mb4">All Projects</h1>
       <div class="grid">
-        {projects.map((project) => (
-          <PortfolioPreview project={project} />
-        ))}
-      </div>
+				{projects.map((project) => <PortfolioPreview project={project} />)}
+			</div>
     </div>
     <Footer />
   </body>
