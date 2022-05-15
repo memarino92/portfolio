@@ -11,14 +11,13 @@ import PortfolioPreview from '../components/PortfolioPreview/index.jsx';
 // Data Fetching: List all Markdown posts in the repo.
 
 //Projects
-const projects = Astro.fetchContent("./project/**/*.md");
+const projects = await Astro.glob("./project/**/*.md");
 const featuredProject = projects[0];
 
 //Blog Posts
-const posts = await Astro.fetchContent("./blog/**/*.md");
-const sortedPosts = posts.sort((a, b) => {
-  return new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime();
-});
+const posts = await Astro.glob("./blog/**/*.md");
+const sortedPosts = posts.filter(({ frontmatter }) => !!frontmatter.publishDate)
+	.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf());
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
