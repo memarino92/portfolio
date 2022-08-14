@@ -36,8 +36,6 @@ tags:
 
 [View the source on GitHub](https://github.com/memarino92/WebStore)
 
-[View a detailed project overview here](../project/WebStore/)
-
 ## A New Paradigm
 
 Not like a _new_ new paradigm. But definitely new to me!
