@@ -9,13 +9,12 @@
     "preview": "astro preview"
   },
   "devDependencies": {
-    "@astrojs/renderer-preact": "^0.3.2",
-    "astro": "^1.0.0-beta.31",
+    "@astrojs/renderer-preact": "^0.5.0",
+    "astro": "^1.0.5",
     "sass": "^1.49.9"
   },
   "dependencies": {
-    "@astrojs/preact": "^0.1.2",
-    "jspdf": "^2.5.1",
-    "react-grid-gallery": "^0.5.5"
+    "@astrojs/preact": "^1.0.2",
+    "jspdf": "^2.5.1"
   }
 }
