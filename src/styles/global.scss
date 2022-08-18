@@ -59,6 +59,7 @@
 
 body {
   margin: 0;
+  min-width: fit-content;
   color: var(--t-fg);
   font-family: 'Inter', 'system-ui', sans-serif;
 }

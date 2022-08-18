@@ -8,4 +8,8 @@ export default defineConfig({
     // Example: Add support for legacy Markdown features
     astroFlavoredMarkdown: true,
   },
+  markdown: {
+    // Can be 'shiki' (default), 'prism' or false to disable highlighting
+    syntaxHighlight: 'prism',
+  },
 });
