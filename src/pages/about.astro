@@ -1,24 +1,29 @@
 ---
-  //import global styles
+//import global styles
 import '../styles/global.scss';
 
 import MainHead from '../components/MainHead.astro';
 import Footer from '../components/Footer/index.jsx';
 import Nav from '../components/Nav/index.jsx';
-
 ---
 
-<html lang="en">
+<html lang='en'>
   <head>
-    <MainHead title="About | Michael Marino" description="About Michael Marino" />
-    <style lang="scss">
+    <MainHead
+      title='About | Michael Marino'
+      description='About Michael Marino'
+    />
+    <style lang='scss'>
       .heroImg {
-        /* max-height: 24rem; */
+        max-height: 36rem;
         object-fit: cover;
         overflow: hidden;
+        display: flex;
+        justify-content: center;
 
         img {
-          width: 100%;
+          width: 75%;
+          margin-top: -4rem;
         }
       }
 
@@ -26,36 +31,42 @@ import Nav from '../components/Nav/index.jsx';
         font-size: var(--f-u1);
         line-height: 2;
       }
+
+      .headline {
+        text-align: center;
+      }
     </style>
   </head>
   <body>
     <Nav />
-    <div class="wrapper">
-      <h1>About Michael</h1>
-      <div class="heroImg">
-        <img width="1400" height="350" alt="Left to right: Me, my fiancée Lainee, and my cousin Zac on a hike in Vermont" src="https://res.cloudinary.com/mmarino/image/upload/v1645930639/ilvxsol8efoqok1zgyae.jpg" />
+    <div class='wrapper'>
+      <h1 class='headline'>About Michael</h1>
+      <div class='heroImg'>
+        <img
+          alt='Bride and groom smiling at the camera on a marble background'
+          src='/assets/husband-and-wife.jpg'
+        />
       </div>
-      <div class="bio wrapper wrapper__readable mt8">
-        <p>
-          Here’s what I’m passionate about:
-        </p>
-        <p>
-          Solving problems.
-        </p>
+      <div class='bio wrapper wrapper__readable mt8'>
+        <p>Here’s what I’m passionate about:</p>
+        <p>Solving problems.</p>
 
         <p>
-          In all of the positions I’ve held in my career, that is how I approached my role: professional problem-solver.</p>
-        <p>
-          That’s one of the things that attracted me to development - it is problem solving at its most explicit. A computer does exactly what you tell it to do, no more, no less. It does not make assumptions or judgements. All you have to do is figure out exactly how to tell the computer what you want it to do, but to do that, you first have to figure out exactly <i>what</i> you want it to do.
+          In all of the positions I’ve held in my career, that is how I
+          approached my role: professional problem-solver.
         </p>
         <p>
-          I thrive with a team that nurtures a growth mindset, and I love to ask questions almost as much as I love answering them. I’m a great equalizer; I love learning from others, and I love teaching what I’ve just learned, spreading knowledge among a team.
+          I thrive with a team that nurtures a growth mindset, and I love to ask
+          questions almost as much as I love answering them. I’m a great
+          equalizer; I love learning from others, and I love teaching what I’ve
+          just learned, spreading knowledge among a team.
         </p>
         <p>
-          I currently live with my amazing fiancée Lainee, our dog Daisy, and our cat Mowgli, in Richmond, VA.
+          I currently live with my amazing wife Lainee and our two pets in
+          Richmond, VA.
         </p>
       </div>
     </div>
     <Footer />
-</body>
+  </body>
 </html>
