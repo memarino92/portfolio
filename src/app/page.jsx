@@ -95,7 +95,7 @@ export default async function Home() {
             Full stack developer, open source enthusiast
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I'm Michael, a software engineer based in Richmond, Virginia.
+            I&apos;m Michael, a software engineer based in Richmond, Virginia.
             Outside of building highly-available, durable web applications for
             my day job, I also enjoy hiking, lifting heavy things, and sharing
             my love of solving problems with programming.
