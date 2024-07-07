@@ -1,24 +1,42 @@
-# Astro Starter Kit: Portfolio
+# Spotlight
+
+Spotlight is a [Tailwind UI](https://tailwindui.com) site template built using [Tailwind CSS](https://tailwindcss.com) and [Next.js](https://nextjs.org).
+
+## Getting started
+
+To get started with this template, first install the npm dependencies:
+
+```bash
+npm install
+```
+
+Next, create a `.env.local` file in the root of your project and set the `NEXT_PUBLIC_SITE_URL` variable to your site's public URL:
 
 ```
-npm init astro -- --template portfolio
+NEXT_PUBLIC_SITE_URL=https://example.com
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/portfolio)
+Next, run the development server:
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+```bash
+npm run dev
+```
 
-## 🧞 Commands
+Finally, open [http://localhost:3000](http://localhost:3000) in your browser to view the website.
 
-All commands are run from the root of the project, from a terminal:
+## Customizing
 
-| Command           | Action                                       |
-|:----------------  |:-------------------------------------------- |
-| `npm install`     | Installs dependencies                        |
-| `npm run dev`     | Starts local dev server at `localhost:3000`  |
-| `npm run build`   | Build your production site to `./dist/`      |
-| `npm run preview` | Preview your build locally, before deploying |
+You can start editing this template by modifying the files in the `/src` folder. The site will auto-update as you edit these files.
 
-## 👀 Want to learn more?
+## License
 
-Feel free to check [our documentation](https://github.com/withastro/astro) or jump into our [Discord server](https://astro.build/chat).
+This site template is a commercial product and is licensed under the [Tailwind UI license](https://tailwindui.com/license).
+
+## Learn more
+
+To learn more about the technologies used in this site template, see the following resources:
+
+- [Tailwind CSS](https://tailwindcss.com/docs) - the official Tailwind CSS documentation
+- [Next.js](https://nextjs.org/docs) - the official Next.js documentation
+- [Headless UI](https://headlessui.dev) - the official Headless UI documentation
+- [MDX](https://mdxjs.com) - the MDX documentation

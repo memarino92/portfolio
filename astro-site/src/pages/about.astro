@@ -1,0 +1,72 @@
+---
+//import global styles
+import '../styles/global.scss';
+
+import MainHead from '../components/MainHead.astro';
+import Footer from '../components/Footer/index.jsx';
+import Nav from '../components/Nav/index.jsx';
+---
+
+<html lang='en'>
+  <head>
+    <MainHead
+      title='About | Michael Marino'
+      description='About Michael Marino'
+    />
+    <style lang='scss'>
+      .heroImg {
+        max-height: 36rem;
+        object-fit: cover;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+
+        img {
+          width: 75%;
+          margin-top: -4rem;
+        }
+      }
+
+      .bio {
+        font-size: var(--f-u1);
+        line-height: 2;
+      }
+
+      .headline {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <Nav />
+    <div class='wrapper'>
+      <h1 class='headline'>About Michael</h1>
+      <div class='heroImg'>
+        <img
+          alt='Bride and groom smiling at the camera on a marble background'
+          src='/assets/husband-and-wife.jpg'
+        />
+      </div>
+      <div class='bio wrapper wrapper__readable mt8'>
+        <p>Here’s what I’m passionate about:</p>
+        <p>Solving problems.</p>
+
+        <p>
+          In all of the positions I’ve held in my career, that is how I
+          approached my role: professional problem-solver.
+        </p>
+        <p>
+          I thrive with a team that nurtures a growth mindset, and I love to ask
+          questions almost as much as I love answering them. I’m a great
+          equalizer; I love learning from others, and I love teaching what I’ve
+          just learned, spreading knowledge among a team.
+        </p>
+        <p>
+          I currently live with my amazing wife Lainee and our two pets in
+          Richmond, VA.
+        </p>
+      </div>
+    </div>
+    <Footer />
+  </body>
+</html>
