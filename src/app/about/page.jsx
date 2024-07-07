@@ -151,7 +151,7 @@ export default function About() {
         </div>
         <div className="lg:order-first lg:row-span-2">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            I'm Michael, a software engineer based in Richmond, Virginia.
+            I&apos;m Michael, a software engineer based in Richmond, Virginia.
           </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
@@ -164,28 +164,28 @@ export default function About() {
               😉) programming concepts from a Windows 95 game by Interplay
               called
               <BioLink href="https://www.youtube.com/uBYz9syhNAA">
-                "Learn to Program BASIC".
+                &lsquo;Learn to Program BASIC&lsquo;.
               </BioLink>
               I would carry around a notebook to scribble JavaScript in to try
               out when I got home from school (and make cool cursor trails on my
               MySpace page).
             </p>
             <p>
-              I spent the next two decades as what I would call a "hobby
-              technologist", experimenting with gadgets and gizmos, building
-              automations using exisiting tooling. I persued careers in music
-              and restaurants before coming back to relearn programming and
-              finding my way into the industry.
+              I spent the next two decades as what I would call a &lsquo;hobby
+              technologist&lsquo;, experimenting with gadgets and gizmos,
+              building automations using exisiting tooling. I persued careers in
+              music and restaurants before coming back to relearn programming
+              and finding my way into the industry.
             </p>
             <p>
               Today, I build full-stack web applications using a variety of
               technologies, mostly centered around the .NET and Typescript
-              ecosystems with an emphasis on embracing modern web APIs. I'm a
-              contributor to open source projects such as
+              ecosystems with an emphasis on embracing modern web APIs. I&apos;m
+              a contributor to open source projects such as
               <BioLink href="https://astro.build/">Astro</BioLink>and
               <BioLink href="https://redwoodjs.com/">RedwoodJS,</BioLink> and
-              love sharing what I've learned by speaking at local meetups and
-              conferences such as
+              love sharing what I&apos;ve learned by speaking at local meetups
+              and conferences such as
               <BioLink href="https://www.meetup.com/rva-js/">RVA.js</BioLink>
               and
               <BioLink href="https://rvasdug.org/">RVASDUG</BioLink>.
