@@ -71,7 +71,7 @@ Great! Now we have our own custom-stlyed `<Button>` component. It doesn't do muc
 </div>
 
 @code {
-    private int count { get; set; } = 0;
+    private int count = 0;
 }
 ```
 
@@ -134,9 +134,11 @@ We could even add a second `<Button>` to control whether the first one is disabl
 </div>
 
 @code {
-    private int count { get; set; } = 0;
+    private int count = 0;
     private bool isDisabled = false;
 }
 ```
 
 And there you have it! This technique is hugely powerful, and very useful with all sort of input and action components. You do have to be mindful of where you're placing the attributes when passing to components with significant amounts of markup, but this technique can lead to a real reduction in complexity when applied properly.
+
+You can find a working demo of the code shared in this article [on GitHub here](https://github.com/memarino92/blazor-captured-attributes).
