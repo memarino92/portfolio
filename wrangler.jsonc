@@ -1,6 +1,8 @@
 {
   "$schema": "https://unpkg.com/wrangler@latest/config-schema.json",
   "name": "michael-marino-portfolio",
-  "pages_build_output_dir": "./dist",
-  "compatibility_date": "2026-09-15"
+  "compatibility_date": "2026-09-15",
+  "assets": {
+    "directory": "./dist"
+  }
 }
