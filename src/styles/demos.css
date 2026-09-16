@@ -1,0 +1,22 @@
+/* Controls and inline HTML examples inside restored tutorials. */
+.prose button {
+  padding: .65rem 1rem;
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--color-accent);
+  font: inherit;
+  cursor: pointer;
+}
+.prose button:hover { background: var(--color-accent); color: var(--color-accent-fg); }
+.prose button:disabled { opacity: .45; cursor: not-allowed; }
+.article-demo { margin-block: 2rem; padding: 1.5rem; border: 1px solid var(--color-rule); }
+.article-demo label { display: block; margin-bottom: .75rem; }
+.article-demo textarea { display: block; width: 100%; padding: .75rem; background: var(--color-bg); color: var(--color-fg); border: 1px solid var(--color-rule); font: inherit; }
+.article-demo output { display: block; min-height: 1.5em; font-family: var(--font-mono); }
+.prose iframe { max-width: 100%; }
+.prose .flex { display: flex; }
+.prose .flex-col { flex-direction: column; }
+.prose .gap-2 { gap: .5rem; }
+.prose .p-5 { padding: 1.25rem; }
+.prose .w-max { width: max-content; max-width: 100%; }

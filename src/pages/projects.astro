@@ -1,0 +1,109 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHeader from "../components/PageHeader.astro";
+
+const projects = [
+  {
+    id: "every-deck-of-cards",
+    name: "every-deck-of-cards",
+    github: "https://github.com/memarino92/every-deck-of-cards",
+    category: "An effectively infinite experiment",
+    question: "Scroll through a trillion decks a second for a trillion trillion years, and you still wouldn’t put a dent in all the possible arrangements of 52 cards.",
+    paragraphs: [
+      "everydeckof.cards lets you browse all 80 unvigintillion of them—if you can find the time. A one-to-one mapping between arbitrary-precision integers and deck permutations lets you jump straight to any arrangement without generating the ones before it.",
+      "Making that impossibly large collection feel effortless is the real challenge. Hand-rolled virtualization renders only what’s on screen, Solid keeps those renders efficient, and a Web Worker handles the heavy math so scrolling never has to compete with computation.",
+      "Underneath are pure, testable domain functions and clear boundaries between the math and the interface. The whole application ships as a static bundle on Cloudflare’s global CDN, keeping hosting simple and inexpensive.",
+    ],
+    technologies: ["Solid", "Web Workers", "Arbitrary-precision math"],
+    href: "https://everydeckof.cards",
+    linkText: "Explore everydeckof.cards",
+  },
+  {
+    id: "razor-scoped-style-elements",
+    name: "RazorScopedStyleElements",
+    github: "https://github.com/memarino92/RazorScopedStyleElements",
+    category: "Bringing ideas across ecosystems",
+    question: "Finding a great idea in one ecosystem and bringing it to another.",
+    paragraphs: [
+      "RazorScopedStyleElements brings component-scoped <style> elements—familiar from frameworks like Astro, Svelte, and Vue—to .NET’s Blazor.",
+      "It’s distributed as a NuGet package and transforms components at build time, doing just enough work to hand the result off to the .NET SDK’s existing MSBuild scoped-CSS pipeline rather than reinventing it.",
+    ],
+    technologies: ["Blazor", "MSBuild", "NuGet"],
+    href: "https://www.nuget.org/packages/RazorScopedStyleElements",
+    linkText: "View on NuGet.org",
+  },
+  {
+    id: "bzzr",
+    name: "bzzr",
+    github: "https://github.com/memarino92/bzzr",
+    category: "A little friendly competition",
+    question: "A free, frictionless buzzer system for Jeopardy-style games.",
+    paragraphs: [
+      "bzzr supports real-time rooms of up to 60 players and is built with React, RedwoodSDK, Tailwind CSS, and Storybook. It’s deployed on Cloudflare, with Durable Objects coordinating real-time multiplayer state.",
+    ],
+    technologies: ["React", "RedwoodSDK", "Cloudflare Durable Objects"],
+    href: "https://bzzr.app",
+    linkText: "Buzz in at bzzr.app",
+    storybook: "https://storybook.bzzr.app",
+  },
+  {
+    id: "agent-playground",
+    name: "AgentPlayground",
+    github: "https://github.com/memarino92/AgentPlayground",
+    category: "An agentic digital garden",
+    question: "Part playground, part useful personal software, and an excuse to keep experimenting with what modern AI systems can actually do.",
+    paragraphs: [
+      "It started as a chat interface and has grown to include file uploads, speaker-aware voice transcription, web search, semantic-search RAG, real-time and scheduled tasks, push notifications through a mobile companion app, and role-based access control around tool execution with social login.",
+      "Underneath, it’s a distributed .NET application composed of three services on a private network, with asynchronous messaging, relational data, and vector search consolidated into PostgreSQL with automated backups.",
+    ],
+    technologies: [".NET", "PostgreSQL", "AI agents"],
+    note: "No public deployment for this one—unless you ask really nicely. 😉",
+  },
+];
+---
+
+<BaseLayout title="Projects" description="Selected projects by Michael Marino: an infinite deck browser, scoped styles for Blazor, multiplayer buzzers, and an agentic digital garden.">
+  <div class="wrap">
+    <PageHeader eyebrow="Selected work" title="Projects" lede="A few projects that show off the breadth of what I like to build." />
+    <p class="projects-intro">I work primarily across .NET and the modern web, but I’m much more interested in solving problems than being defined by a particular stack. I enjoy moving between languages, ecosystems, and paradigms, absorbing the best ideas from each along the way.</p>
+    <div class="projects">
+      {projects.map((project, index) => (
+        <article class="project" id={project.id} aria-labelledby={`${project.id}-title`}>
+          <div class="project__identity">
+            <p class="eyebrow"><span aria-hidden="true">0{index + 1} / </span>{project.category}</p>
+            <h2 id={`${project.id}-title`}>{project.name}</h2>
+            <ul class="project__technologies" aria-label="Technologies">
+              {project.technologies.map(technology => <li>{technology}</li>)}
+            </ul>
+          </div>
+          <div class="project__body">
+            <p class="project__lead">{project.question}</p>
+            {project.paragraphs.map(paragraph => <p>{paragraph}</p>)}
+            <div class="project__links">
+              {project.href && <a class="project__link" href={project.href}>{project.linkText} <span aria-hidden="true">↗</span></a>}
+              <a class="project__link" href={project.github} aria-label={`View ${project.name} on GitHub`}>View on GitHub <span aria-hidden="true">↗</span></a>
+              {project.storybook && <a class="project__link" href={project.storybook}>Explore Storybook <span aria-hidden="true">↗</span></a>}
+            </div>
+            {project.note && <p class="project__note">{project.note}</p>}
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .projects-intro { max-width: var(--width-prose); padding-block: var(--space-8) var(--space-12); font-size: var(--text-md); color: var(--color-fg-muted); }
+  .project { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--space-12); padding-block: var(--space-12); border-top: var(--rule-width) solid var(--color-rule); scroll-margin-top: var(--space-8); }
+  .project h2 { margin-block: var(--space-4) var(--space-6); font-size: clamp(1.6rem, 3vw, 2.25rem); line-height: 1.2; overflow-wrap: anywhere; }
+  .project__technologies { display: flex; flex-wrap: wrap; gap: .5rem 1rem; padding: 0; margin: 0; list-style: none; font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-fg-muted); }
+  .project__body { font-size: var(--text-md); color: var(--color-fg-muted); }
+  .project__body > * + * { margin-top: var(--space-6); }
+  .project__lead { color: var(--color-fg); font-size: var(--text-lg); line-height: 1.5; }
+  .project__link { display: inline-block; color: var(--color-accent); text-underline-offset: .25em; }
+  .project__links { display: flex; flex-wrap: wrap; gap: 1rem 2.5rem; }
+  .project__note { font-style: italic; }
+  .work-link { padding-top: var(--space-8); border-top: var(--rule-width) solid var(--color-rule); color: var(--color-fg-muted); }
+  .work-link a { color: var(--color-fg); text-underline-offset: .25em; }
+  @media (max-width: 64rem) { .project { grid-template-columns: 1fr; gap: var(--space-6); } }
+</style>

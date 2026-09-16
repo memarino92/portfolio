@@ -1,0 +1,40 @@
+---
+import { Image } from "astro:assets";
+import portrait from "../assets/photos/husband-and-wife.jpg";
+import "../styles/prose.css";
+import PageHeader from "../components/PageHeader.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { AUTHOR, SOCIAL } from "../config";
+---
+<BaseLayout title="About" description={AUTHOR.bio}>
+  <div class="wrap">
+    <PageHeader eyebrow="Behind the keyboard" title="Hi, I’m Michael." lede={AUTHOR.bio} />
+    <div class="about">
+      <div class="prose">
+        <p>My love of programming started at an early age. In third grade, my friend Sam and I tried to memorize the alphabet in binary out of a Farmers’ Almanac. We were sure it would come in handy.</p>
+        <p>Later, I learned about variables, loops, and other BASIC concepts from a Windows 95 game by Interplay called <a href="https://www.youtube.com/watch?v=uBYz9syhNAA">Learn to Program BASIC</a>. I carried around a notebook to scribble JavaScript in and try out when I got home from school, including some very important MySpace cursor trails.</p>
+        <p>I spent the next two decades as a hobby technologist, experimenting with gadgets and building automations. I pursued careers in music and hospitality before coming back to programming and finding my way into the industry.</p>
+        <h2>What I build</h2>
+        <p>I build full-stack web applications, mostly in the .NET and TypeScript ecosystems, with an emphasis on embracing modern web APIs. I’ve contributed to open source projects including <a href="https://astro.build/">Astro</a> and <a href="https://redwoodjs.com/">RedwoodJS</a>.</p>
+        <p>This site is where I share what I learn: practical walkthroughs, experiments, and the occasional programming puzzle that takes twenty years to solve.</p>
+        <h2>Beyond the keyboard</h2>
+        <p>I enjoy competing in strongman, making music, and most forms of being outside.</p>
+        <h2>Community</h2>
+        <p>I’m also an active member of Richmond’s software community. I co-organized and presented at Richmond JavaScript Conference 2025 and regularly attend and speak at local meetups, including <a href="https://www.meetup.com/rva-js/">RVA.js</a> and <a href="https://rvasdug.org/">RVASDUG</a>.</p>
+        <p>I’ve given talks on topics including .NET for JavaScript Developers, Astro, RedwoodJS, Tauri, Playwright, test isolation, and learning in public.</p>
+        <h2>Say hello</h2>
+        <ul>{SOCIAL.map(link => <li><a href={link.href}>{link.label}</a></li>)}</ul>
+      </div>
+      <aside>
+        <Image src={portrait} alt="Michael and his wife" width={600} height={720} fit="cover" />
+        <p class="label">Richmond, Virginia</p>
+      </aside>
+    </div>
+  </div>
+</BaseLayout>
+<style>
+  .about { display: grid; grid-template-columns: minmax(0, 1fr) minmax(12rem, 22rem); gap: var(--space-12); padding-block: var(--space-12); align-items: start; }
+  aside img { width: 100%; height: auto; border-radius: 2px; }
+  aside p { margin-top: var(--space-4); color: var(--color-fg-muted); }
+  @media (max-width: 48rem) { .about { grid-template-columns: 1fr; } aside { max-width: 24rem; } }
+</style>
