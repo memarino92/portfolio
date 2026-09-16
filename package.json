@@ -10,6 +10,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "preview:cloudflare": "npm run build && npx wrangler pages dev",
+    "deploy": "npm run build && npx wrangler pages deploy",
     "check": "astro check",
     "astro": "astro",
     "new:post": "node scripts/new-post.mjs"

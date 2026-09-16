@@ -55,7 +55,15 @@ npm run build
 npm run preview
 ```
 
-Commit and push after checking the preview. Connect this repository to your static host once, with **build command `npm run build`**, **output directory `dist`**, and **Node 24**. Subsequent pushes can deploy automatically through that host. This repository does not provision a hosting service.
+Commit and push after checking the preview. This repository includes a Cloudflare Pages configuration in `wrangler.jsonc`: its project name is `michael-marino-portfolio`, its build command is `npm run build`, and its output directory is `dist`. Create a Pages project with that name, connect this repository, and select Node 24. Subsequent pushes can deploy automatically through Cloudflare Pages.
+
+For a direct Wrangler deployment, authenticate once with `npx wrangler login`, then run:
+
+```sh
+npm run deploy
+```
+
+To serve the production build locally with Cloudflare Pages behavior, run `npm run preview:cloudflare`.
 
 `src/config.ts` contains the public URL (`https://michaelmarino.dev`), profile, social links, and theme options. Confirm the URL before deploying. The homepage uses a static background; the ink animation has been removed.
 
