@@ -1,0 +1,137 @@
+---
+import { Image } from "astro:assets";
+import hiking from "../assets/photos/camelshump.jpg";
+import headshot from "../assets/photos/bandpromocropped.jpg";
+import onStage from "../assets/photos/actionshot.jpg";
+import PostCard from "../components/PostCard.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { BLOG, SITE } from "../config";
+import { getPublishedPosts } from "../utils/posts";
+
+const posts = (await getPublishedPosts()).slice(0, BLOG.postsOnHome);
+---
+
+<BaseLayout overlayHeader>
+  <section class="hero-panel" aria-label="Introduction">
+    <div class="hero">
+      <p class="hero__eyebrow">Software engineer · Richmond, Virginia</p>
+      <h1 class="hero__title">{SITE.title}</h1>
+      <p class="hero__lede">{SITE.tagline}</p>
+      <p class="hero__cta">
+        <a href="/blog/">Read the articles ↓</a>
+      </p>
+    </div>
+
+  </section>
+
+  <section class="intro wrap" aria-labelledby="intro-title">
+    <div><p class="eyebrow">A little about me</p><h2 id="intro-title">A developer, and a few other things.</h2>
+    <p>I build full-stack web applications, mostly with .NET and TypeScript. Away from the keyboard, I enjoy I enjoy competing in strongman, making music, and most forms of being outside.</p>
+    <a class="label" href="/about/">More about me →</a></div>
+    <div class="photo-strip">
+      <Image src={hiking} alt="A view from a hiking trip in the mountains" width={420} height={480} fit="cover" />
+      <Image src={headshot} alt="Headshot of Michael Marino" width={420} height={480} fit="cover" />
+      <Image src={onStage} alt="Michael playing guitar on stage" width={420} height={480} fit="cover" />
+    </div>
+  </section>
+  <section class="section wrap">
+    <div class="latest__head">
+      <h2 class="eyebrow">Latest articles</h2>
+      <a class="latest__all label" href="/blog/">All posts →</a>
+    </div>
+
+    <div class="latest__list">
+      {posts.map((post) => <PostCard post={post} />)}
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .intro { padding-top: var(--space-16); display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-12); align-items: center; }
+  .intro h2 { font-size: clamp(1.8rem, 3vw, 2.7rem); line-height: 1.15; margin-block: var(--space-4); }
+  .intro p:not(.eyebrow) { color: var(--color-fg-muted); margin-bottom: var(--space-6); }
+  .photo-strip { display: flex; gap: 0.7rem; }
+  .photo-strip img { width: calc((100% - 1.4rem) / 3); height: auto; aspect-ratio: 7 / 8; object-fit: cover; border-radius: 2px; }
+  .photo-strip img:nth-child(2) { transform: translateY(1rem); }
+  @media (max-width: 48rem) { .intro { grid-template-columns: 1fr; } }
+
+  .hero-panel { display: flex; min-height: min(42rem, 90svh); border-bottom: 1px solid var(--color-rule); }
+  .hero {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-6);
+    padding: calc(var(--space-24) + 4rem) var(--gutter) var(--space-16);
+    text-align: center;
+  }
+
+  .hero__eyebrow {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+    color: var(--color-accent);
+  }
+
+  .hero__title {
+    font-family: var(--font-mono);
+    font-size: clamp(2.7rem, 8.5vw, 8rem);
+    max-width: 12ch;
+    font-weight: 600;
+    line-height: 0.9;
+    letter-spacing: var(--tracking-hero);
+    text-transform: uppercase;
+  }
+
+  .hero__lede {
+    max-width: 32rem;
+    font-size: var(--text-md);
+    color: var(--color-fg-muted);
+  }
+
+  .hero__cta a {
+    display: inline-block;
+    padding: var(--space-3) var(--space-6);
+    border: var(--rule-width) solid var(--color-accent);
+    border-radius: var(--radius);
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--color-accent);
+    transition:
+      background var(--duration-fast) var(--ease-out),
+      color var(--duration-fast) var(--ease-out);
+  }
+
+  .hero__cta a:hover {
+    background: var(--color-accent);
+    color: var(--color-accent-fg);
+  }
+
+  .latest__head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--space-4);
+    padding-bottom: var(--space-6);
+    border-bottom: var(--rule-width) solid var(--color-rule);
+  }
+
+  .latest__all {
+    text-decoration: none;
+  }
+
+  .latest__all:hover {
+    color: var(--color-accent);
+  }
+
+  .latest__list :global(.post-card:last-child) {
+    border-bottom: none;
+  }
+
+</style>

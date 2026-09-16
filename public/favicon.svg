@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Michael Marino</title>
+  <rect width="64" height="64" rx="12" fill="#1a1a1a"/>
+  <g fill="none" stroke="#faf8f5" stroke-width="4.5" stroke-linecap="square">
+    <path d="M8 41V24m0 6c0-8 10-8 10 0v11m0-11c0-8 10-8 10 0v11"/>
+    <path d="M36 41V24m0 6c0-8 10-8 10 0v11m0-11c0-8 10-8 10 0v11"/>
+  </g>
+  <path d="M8 51h48" stroke="#c85a52" stroke-width="3"/>
+</svg>
