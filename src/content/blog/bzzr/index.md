@@ -26,7 +26,7 @@ Keeping that scope was part of the appeal. You bring the questions and keep scor
 
 The interesting technical decision was also the one that drew me to the project: **one Durable Object per room**. Everyone in a room connects to the same object over a WebSocket. It owns the room's state, accepts buzzes, and sends the resulting order back to everyone. RedwoodSDK brings React and the Cloudflare Worker together, keeping me focused on the domain, just the way I like.
 
-So it works out that the archtecture of the app maps neatly to the domain of the game itself. Each group needs one place to settle what happened, and separate games don't need to know about each other. I don't have to build a shared room registry or coordinate room state across server instances. Cloudflare gives me that boundary as a DO, and I can concentrate on what happens inside it.
+So it works out that the architecture of the app maps neatly to the domain of the game itself. Each group needs one place to settle what happened, and separate games don't need to know about each other. I don't have to build a shared room registry or coordinate room state across server instances. Cloudflare gives me that boundary as a DO, and I can concentrate on what happens inside it.
 
 One caveat: buzz order is the order the server receives the buzzes. A player's browser doesn't get to claim first place based on its own clock. That gives everyone a consistent result, even if it can't make everyone's network connection equally fast. For a casual trivia night, that's a compromise I'm comfortable with.
 
@@ -38,7 +38,7 @@ Storybook was another deliberate choice, and again inspired by those original Re
 
 There are a few conveniences thrown around the core of the game too: room for up to 60 players, host controls to remove disruptive players, and a spectator view that you could put on a separate screen or projector. There's even a left-handed mode. You're welcome.
 
-Mostly, though, I wanted something you could pull up when someone says, "We need buzzers," and be playing a minute later.
+Mostly, though, I wanted something you could pull up when someone says, "We need buzzers" and be playing a minute later.
 
 The [source code is available on GitHub](https://github.com/memarino92/bzzr) under the MIT license. Clone it, modify it, make the design yours. Add chat and questions and build your own trivia SaaS app. Take it wherever you want! My first contribution to Redwood was one line of CSS; it'd be pretty cool if this became someone else's starting point.
 
